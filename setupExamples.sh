@@ -25,6 +25,8 @@ sudo yum -y install git
 echo "--- Cloning this git repo setupExamples ---"
 git clone https://github.com/couchbasebrian/setupExamples.git
 echo "--- Copying files into /var/www/html ---"
-cp -p ./setupExamples/var/www/html/* /var/www/html/
+sudo cp -p ./setupExamples/var/www/html/* /var/www/html/
+echo "--- Starting apache httpd ---"
+sudo service httpd start
 echo "--- Done Installing ---"
 exit 0
