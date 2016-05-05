@@ -2,7 +2,7 @@
 # Script to set up SDK, N1QL, graphing examples
 # It is assumed that this is being run on a newly created 
 # Red Hat or CentOS virtual machine
-# in a dev or test environment
+# in a dev or test environment, on a Couchbase node
 #
 echo "--- Installing zlib dependency"
 sudo yum -y install zlib-devel
@@ -20,5 +20,9 @@ echo "--- Installing Apache ---"
 sudo yum -y install httpd
 echo "--- Installing Couchbase PHP SDK ---"
 sudo pecl install couchbase
+echo "--- Installing git ---"
+sudo yum -y install git
+echo "--- Cloning this git repo setupExamples ---"
+git clone https://github.com/couchbasebrian/setupExamples.git
 echo "--- Done Installing ---"
 exit 0
