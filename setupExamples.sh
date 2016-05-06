@@ -33,5 +33,7 @@ echo "--- Adding couchbase PHP extention to php.ini  ---"
 sudo chmod 666 /etc/php.ini; /usr/bin/sudo echo extension=/usr/lib64/php/modules/couchbase.so >> /etc/php.ini
 echo "--- Starting apache httpd ---"
 sudo service httpd start
+echo "--- Creating primary index on beer-sample bucket ---"
+./n1ql/createPrimaryIndexOnBeerSample.sh
 echo "--- Done Installing ---"
 exit 0
