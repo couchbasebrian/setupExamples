@@ -7,6 +7,9 @@
 # Red Hat or CentOS virtual machine
 # in a DEV or TEST environment, on a Couchbase node
 #
+# It is also assumed that you have setup the node
+# via the setup wizard or joined it to a cluster
+#
 echo "--- Installing zlib dependency"
 sudo yum -y install zlib-devel
 echo "--- Getting Couchbase Repository RPM ---"
@@ -39,5 +42,8 @@ echo "--- Getting Chart.js ---"
 git clone https://github.com/chartjs/Chart.js.git
 echo "--- Copy Chart.js into /var/www/html/php ---"
 cp -p Chart.js/dist/Chart.js /var/www/html/php/
+echo "--- Install some utilities"
+wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+sudo yum -y install telnet 
 echo "--- Done Installing ---"
 exit 0
