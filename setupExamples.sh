@@ -34,7 +34,7 @@ sudo chmod 666 /etc/php.ini; /usr/bin/sudo echo extension=/usr/lib64/php/modules
 echo "--- Starting apache httpd ---"
 sudo service httpd start
 echo "--- Creating primary index on beer-sample bucket ---"
-./n1ql/createPrimaryIndexOnBeerSample.sh
+./setupExamples/n1ql/createPrimaryIndexOnBeerSample.sh
 echo "--- Getting Chart.js ---"
 git clone https://github.com/chartjs/Chart.js.git
 echo "--- Copy Chart.js into /var/www/html/php ---"
